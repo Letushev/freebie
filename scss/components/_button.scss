@@ -1,0 +1,16 @@
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: $blue;
+  border-radius: calc(3rem / 2);
+
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #fff;
+
+  &--no-bg {
+    background-color: transparent;
+    font-weight: 500;
+    color: $blue;
+  }
+}

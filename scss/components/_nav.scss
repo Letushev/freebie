@@ -1,0 +1,31 @@
+.nav {
+  &__logo {
+    font-size: 2rem;
+    font-weight: bold;
+
+    span {
+      color: $orange;
+    }
+  }
+  
+  &__list {
+    display: flex;
+
+  }
+
+  &__link {
+    padding: .5rem 1rem;
+    font-weight: 500;
+    background-image: linear-gradient(to right, $orange, $orange);
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    background-position: 0% 100%;
+    transition: all .25s ease-out;
+    transition-property: color, background-size;
+    
+    &:hover {
+      background-size: 100% 2px;
+      color: $orange;
+    }
+  }
+}

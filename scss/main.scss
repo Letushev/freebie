@@ -1,2 +1,9 @@
-@import 'reset';
-@import 'global';
+@import 'base/reset';
+@import 'base/vars';
+@import 'base/global';
+@import 'base/layout';
+
+@import 'components/nav';
+@import 'components/button';
+
+@import 'sections/banner';

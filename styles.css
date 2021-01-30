@@ -24,10 +24,6 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol, ul {
   list-style: none;
 }
@@ -57,4 +53,177 @@ table {
 
 html {
   font-size: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #242f51;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  padding: 0 36px;
+  margin: 0 auto;
+}
+
+.nav__logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.nav__logo span {
+  color: #fcae61;
+}
+.nav__list {
+  display: flex;
+}
+.nav__link {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #fcae61, #fcae61);
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  background-position: 0% 100%;
+  transition: all 0.25s ease-out;
+  transition-property: color, background-size;
+}
+.nav__link:hover {
+  background-size: 100% 2px;
+  color: #fcae61;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #2500f9;
+  border-radius: calc(3rem / 2);
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #fff;
+}
+.button--no-bg {
+  background-color: transparent;
+  font-weight: 500;
+  color: #2500f9;
+}
+
+.banner {
+  height: 100vh;
+  max-height: 1000px;
+  background: url(images/bg-buildings.png) repeat-x center bottom #fdfdfe;
+}
+.banner__content-wrapper {
+  height: 100%;
+  padding-top: 48px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.banner__nav {
+  display: flex;
+  align-items: center;
+}
+.banner__logo {
+  margin-right: auto;
+}
+.banner__links {
+  margin-right: 16px;
+}
+.banner__main {
+  margin: 32px 64px 0;
+  flex: 1 1 auto;
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .banner__main {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.banner__body {
+  align-self: center;
+  width: 50%;
+  margin-right: 5%;
+}
+.banner__image-wrapper {
+  position: relative;
+  width: 45%;
+}
+.banner__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right;
+}
+.banner__sticker {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 0 40px;
+  border-radius: calc(2rem / 2);
+  background-color: #e2eaed;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  /* checked icon */
+  /* shine effect */
+}
+.banner__sticker::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fcae61;
+  background-image: url(images/icons/checked.svg);
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center;
+}
+@keyframes shine {
+  /* nothing changes from 20% to 100%
+    to make 4s delay between intervals */
+  0% {
+    right: -64px;
+  }
+  20% {
+    right: calc(100% + 64px);
+  }
+  100% {
+    right: calc(100% + 64px);
+  }
+}
+.banner__sticker::after {
+  content: "";
+  position: absolute;
+  right: -64px;
+  width: 48px;
+  height: 2rem;
+  transform: skewX(-25deg);
+  background-color: rgba(255, 255, 255, 0.5);
+  animation-name: shine;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.banner__heading {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 4.8rem;
+}
+.banner__text {
+  margin: 16px 0 32px;
+  font-size: 1.125rem;
 }
