@@ -46,4 +46,8 @@
       background-color: rgba($blue-focus, 0.3);
     }
   }
+
+  @media (max-width: 30em) {
+    font-size: 0.875rem;
+  }
 }

@@ -11,14 +11,24 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   >
 </head>
-<body>
+<body class="preload-transitions">
   <section class="banner" role="banner">
     <div class="content-wrapper banner__content-wrapper">
       <header class="nav banner__nav">
         <a href="#" class="nav__logo banner__logo">
           <span>App</span>Lab
         </a>
-        <nav class="nav__links banner__links">
+        <input type="checkbox" id="burger" class="visually-hidden burger-control" />
+        <label
+          for="burger"
+          class="burger banner__burger"
+          role="button" 
+          aria-label="menu"
+          aria-controls="navigation"
+        >
+          <span class="burger__meat"></span>
+        </label>
+        <nav class="nav__links banner__links" id="navigation">
           <ul class="nav__list">
             <li class="nav__item">
               <a href="#home" class="nav__link">
@@ -76,5 +86,6 @@
       </header>
     </div>
   </section>
+  <script src="index.js"></script>
 </body>
 </html>
