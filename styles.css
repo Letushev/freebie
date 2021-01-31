@@ -97,28 +97,60 @@ a {
   transition-property: color, background-size;
 }
 .nav__link:hover {
-  background-size: 100% 2px;
   color: #fcae61;
+  background-size: 100% 2px;
+}
+.nav__link:focus {
+  color: #fcae61;
+}
+.nav__link:active {
+  transition: none;
+  color: #fc7361;
+  background-image: linear-gradient(to right, #fc7361, #fc7361);
 }
 
 .button {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #2500f9;
   border-radius: calc(3rem / 2);
   font-size: 1rem;
   line-height: 1rem;
+  white-space: nowrap;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.2s ease-in;
+}
+.button--primary {
+  background-color: #2500f9;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
   color: #fff;
 }
-.button--no-bg {
-  background-color: transparent;
+.button--primary:hover {
+  background-color: #4d2eff;
+  box-shadow: 0 6px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.button--primary:focus {
+  background-color: #7961ff;
+}
+.button--primary:active {
+  background-color: rgba(121, 97, 255, 0.75);
+  box-shadow: 0 7px 10px 2px rgba(0, 0, 0, 0.15);
+}
+.button--text {
   font-weight: 500;
   color: #2500f9;
+}
+.button--text:hover {
+  background-color: rgba(77, 46, 255, 0.1);
+}
+.button--text:focus {
+  background-color: rgba(121, 97, 255, 0.2);
+}
+.button--text:active {
+  background-color: rgba(121, 97, 255, 0.3);
 }
 
 .banner {
   height: 100vh;
-  max-height: 1000px;
+  max-height: 950px;
   background: url(images/bg-buildings.png) repeat-x center bottom #fdfdfe;
 }
 .banner__content-wrapper {
@@ -153,6 +185,7 @@ a {
   align-self: center;
   width: 50%;
   margin-right: 5%;
+  max-width: 560px;
 }
 .banner__image-wrapper {
   position: relative;
@@ -174,6 +207,8 @@ a {
   background-color: #e2eaed;
   font-size: 1.125rem;
   line-height: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
   /* checked icon */
   /* shine effect */
 }
@@ -226,4 +261,40 @@ a {
 .banner__text {
   margin: 16px 0 32px;
   font-size: 1.125rem;
+}
+.banner__demo-button {
+  margin-left: 8px;
+}
+@media (max-width: 925px) {
+  .banner__body {
+    width: 60%;
+    margin-right: 3%;
+  }
+  .banner__image-wrapper {
+    width: 37%;
+  }
+  .banner__header-button {
+    display: none;
+  }
+  .banner__links {
+    margin: 0;
+  }
+}
+@media (max-width: 800px) {
+  .banner__body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .banner__image-wrapper {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .banner__logo {
+    margin: 0 auto;
+  }
+  .banner__links {
+    display: none;
+  }
 }

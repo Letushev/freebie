@@ -24,8 +24,18 @@
     transition-property: color, background-size;
     
     &:hover {
-      background-size: 100% 2px;
       color: $orange;
+      background-size: 100% 2px;
+    }
+
+    &:focus {
+      color: $orange;
+    }
+
+    &:active {
+      transition: none;
+      color: $red;
+      background-image: linear-gradient(to right, $red, $red);
     }
   }
 }

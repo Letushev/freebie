@@ -1,6 +1,6 @@
 .banner {
   height: 100vh;
-  max-height: 1000px;
+  max-height: 950px;
   background:
     url(images/bg-buildings.png) repeat-x center bottom
     $gray-white;
@@ -41,6 +41,7 @@
     align-self: center;
     width: 50%;
     margin-right: 5%;
+    max-width: 560px;
   }
 
   &__image-wrapper {
@@ -68,6 +69,8 @@
 
     font-size: $font-s-l;
     line-height: $height;
+    white-space: nowrap;
+    overflow: hidden;
 
     /* checked icon */
     &::before {
@@ -121,5 +124,50 @@
   &__text {
     margin: 16px 0 32px;
     font-size: $font-s-l;
+  }
+
+  &__demo-button {
+    margin-left: 8px;
+  }
+
+  @media (max-width: 925px) {
+    &__body {
+      width: 60%;
+      margin-right: 3%;
+    }
+
+    &__image-wrapper {
+      width: 37%;
+    }
+
+    &__header-button {
+      display: none;
+    }
+
+    &__links {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__body {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &__image-wrapper {
+      display: none;
+    }
+  }
+
+  @media (max-width: 750px) {
+    &__logo {
+      margin: 0 auto;
+    }
+
+    &__links {
+      display: none;
+    }
   }
 }
