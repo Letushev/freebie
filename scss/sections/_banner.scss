@@ -9,6 +9,7 @@
 }
 
 .banner {
+  /* make banner fill the initial viewport height */
   height: 100vh;
   min-height: 550px;
   max-height: 950px;
@@ -41,23 +42,12 @@
 
   &__burger {
     display: none;
-
-    @media (max-width: 47em) {
-      display: block;
-      position: fixed;
-      z-index: 3;
-    }
   }
 
   &__main {
     padding: 32px 64px 0;
     flex: 1 1 auto;
     display: flex;
-
-    @media (max-width: 75em) {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 
   &__body {
@@ -153,6 +143,14 @@
     margin: 8px;
   }
 
+  /* RESPONSIVE */
+  @media (max-width: 75em) {
+    &__main {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   @media (max-width: 58em) {
     &__body {
       width: 60%;
@@ -189,15 +187,25 @@
       margin: 0 auto;
     }
 
-    #burger:checked ~ &__links {
-      transform: translateX(0);
+    .burger {
+      display: block;
+      position: fixed;
+      z-index: 3;
     }
 
+    /* show sidebar */
+    #burger:checked ~ &__links {
+      left: 0;
+      transform: translateX(0);
+      box-shadow: 0 5px 10px rgba(#000, 0.3);
+    }
+
+    /* hidden sidebar */
     &__links {
       position: fixed;
       z-index: 2;
       top: 0;
-      left: 0;
+      left: -100vw;
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
 
@@ -206,7 +214,6 @@
       height: 100%;
 
       background-color: #fff;
-      box-shadow: 0 5px 10px rgba(#000, 0.3);
 
       display: flex;
       flex-direction: column;
