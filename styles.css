@@ -641,3 +641,37 @@ button {
     margin-left: 0;
   }
 }
+
+.tech {
+  margin: 64px 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tech__img-wrapper {
+  width: 50%;
+  margin-right: 48px;
+}
+.tech__img {
+  max-width: 100%;
+  display: block;
+}
+.tech__body {
+  width: calc(50% - 48px);
+  max-width: 22.5rem;
+}
+@media (max-width: 50em) {
+  .tech {
+    margin-top: 32px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .tech__img-wrapper {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+  .tech__body, .tech__img-wrapper {
+    width: 100%;
+    max-width: 30rem;
+  }
+}

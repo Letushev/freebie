@@ -1,0 +1,38 @@
+.tech {
+  margin: 64px 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img-wrapper {
+    width: 50%;
+    margin-right: 48px;
+  }
+
+  &__img {
+    max-width: 100%;
+    display: block;
+  }
+
+  &__body {
+    width: calc(50% - 48px);
+    max-width: 22.5rem;
+  }
+
+  @media (max-width: 50em) {
+    margin-top: 32px;
+    flex-direction: column;
+    text-align: center;
+
+    &__img-wrapper {
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+
+    &__body,
+    &__img-wrapper {
+      width: 100%;
+      max-width: 30rem;
+    }
+  }
+}
