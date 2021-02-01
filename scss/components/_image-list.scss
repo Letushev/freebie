@@ -1,12 +1,5 @@
-@mixin color($color) {
-  .image-list__heading {
-    color: $color;
-  }
-
-  .image-list__img-wrapper {
-    background-color: rgba($color, 0.1);
-  }
-}
+$colors: #ffecef, #eaf9ff, #fff6d3, #e4ffee, #f4f4ff, #fdeee4;
+$colors3: $red, $blue-ribbon, $green;
 
 @mixin vertical-image-list {
   flex-direction: column;
@@ -30,7 +23,7 @@
 
 .image-list {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   
   &__heading {
@@ -49,6 +42,15 @@
     margin-bottom: 16px;
   }
 
+  @each $c in $colors {
+    $i: index($colors, $c);
+    .image-list__item:nth-of-type(#{$i}) {
+      .image-list__img-wrapper {
+        background-color: $c;
+      }
+    }
+  }
+
   &__item {
     margin: 0 32px;
   }
@@ -57,20 +59,36 @@
     @include vertical-image-list;
   }
 
-  &--color {
-    .image-list__item { 
-      &:first-of-type {
-        @include color($red);
-      }
-
-      &:nth-of-type(2) {
-        @include color($blue-ribbon);
-      }
-      
-      &:last-of-type {
-        @include color($green);
+  &--color3 {
+    @each $c in $colors3 {
+      $i: index($colors3, $c);
+      .image-list__item:nth-of-type(#{$i}) {
+        .image-list__img-wrapper {
+          background-color: rgba($c, 0.1);
+        }
+        
+        .image-list__heading {
+          color: $c;
+        }
       }
     }
+  }
+
+  &--grid {
+    flex-wrap: wrap;
+
+    .image-list__item {
+      width: calc(33% - 48px);
+      max-width: 16rem;
+      margin: 24px;
+    }
+  }
+
+  &--centered {
+    .image-list__img-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+    };
   }
 
   @media (max-width: 25rem) {
