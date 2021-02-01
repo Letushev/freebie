@@ -1,2 +1,3 @@
 # Freebie
-## Best app for your modern lifestyle
+
+* Виправити роботу sidebar без використання JS: при закритті сайдабару сторінка поверетається догори + потрібно додати overlay

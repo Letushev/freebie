@@ -1,0 +1,85 @@
+@mixin color($color) {
+  .image-list__heading {
+    color: $color;
+  }
+
+  .image-list__img-wrapper {
+    background-color: rgba($color, 0.1);
+  }
+}
+
+@mixin vertical-image-list {
+  flex-direction: column;
+
+  .image-list__img-wrapper {
+    margin: 0;
+    flex: none;
+  }
+
+  .image-list__item {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    margin: 0;
+  }
+
+  .image-list__item-body {
+    margin-left: 24px;
+  }
+}
+
+.image-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  &__heading {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  &__img-wrapper {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    margin: 0 32px;
+  }
+
+  &--vertical {
+    @include vertical-image-list;
+  }
+
+  &--color {
+    .image-list__item { 
+      &:first-of-type {
+        @include color($red);
+      }
+
+      &:nth-of-type(2) {
+        @include color($blue-ribbon);
+      }
+      
+      &:last-of-type {
+        @include color($green);
+      }
+    }
+  }
+
+  @media (max-width: 25rem) {
+    &__heading {
+      font-size: 1rem;
+    }
+
+    &__text {
+      font-size: 0.875rem;
+    }
+  }
+}
